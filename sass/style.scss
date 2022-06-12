@@ -1,0 +1,112 @@
+@import "./config";
+@import "./variables";
+
+@mixin iconsStyle {
+  padding: 8px;
+  color: white;
+}
+
+body {
+  background-image: url("/img/2022.jpg");
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 200px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 60%;
+  text-align: center;
+  box-shadow: -1px 1px 26px 3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 26px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 26px 3px rgba(0, 0, 0, 0.75);
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: $blue-color;
+  }
+  img {
+    vertical-align: middle;
+  }
+
+  .btn {
+    padding: 12px;
+    background-color: $blue-color;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .input__field {
+    text-align: center;
+  }
+  .input__field input {
+    width: 50%;
+    height: 50px;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  .items {
+    margin: auto;
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  li {
+    height: 50px;
+    list-style: none;
+    background-color: rgb(249, 251, 253);
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .task__name {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+  .task__icons {
+    display: flex;
+    justify-content: center;
+
+    i {
+      cursor: pointer;
+      height: 100%;
+      width: 60px;
+      font-size: 32px;
+      text-align: center;
+    }
+  }
+
+  .fa-pen-to-square {
+    @include iconsStyle();
+
+    background-color: green;
+    border: 1px solid green;
+  }
+
+  .fa-pen-to-square:hover {
+    background-color: rgb(47, 160, 47);
+  }
+
+  .fa-trash-can {
+    @include iconsStyle();
+
+    background-color: red;
+    border: 1px solid red;
+  }
+  .fa-trash-can:hover {
+    background-color: rgb(218, 84, 84);
+  }
+}

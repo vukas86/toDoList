@@ -1,0 +1,135 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-image: url("/img/2022.jpg");
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 200px;
+  margin: 50px auto;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 60%;
+  text-align: center;
+  box-shadow: -1px 1px 26px 3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 1px 26px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 26px 3px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #4974f7;
+}
+
+.wrapper img {
+  vertical-align: middle;
+}
+
+.wrapper .btn {
+  padding: 12px;
+  background-color: #4974f7;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.wrapper .input__field {
+  text-align: center;
+}
+
+.wrapper .input__field input {
+  width: 50%;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.wrapper .items {
+  margin: auto;
+  width: 80%;
+  margin-top: 30px;
+}
+
+.wrapper li {
+  height: 50px;
+  list-style: none;
+  background-color: #f9fbfd;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .task__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 5px;
+  font-size: 18px;
+}
+
+.wrapper .task__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .task__icons i {
+  cursor: pointer;
+  height: 100%;
+  width: 60px;
+  font-size: 32px;
+  text-align: center;
+}
+
+.wrapper .fa-pen-to-square {
+  padding: 8px;
+  color: white;
+  background-color: green;
+  border: 1px solid green;
+}
+
+.wrapper .fa-pen-to-square:hover {
+  background-color: #2fa02f;
+}
+
+.wrapper .fa-trash-can {
+  padding: 8px;
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+}
+
+.wrapper .fa-trash-can:hover {
+  background-color: #da5454;
+}
+/*# sourceMappingURL=style.css.map */
