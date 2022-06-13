@@ -45,6 +45,11 @@ body {
     border-radius: 10px;
     cursor: pointer;
   }
+
+  .btn:hover {
+    background-color: rgb(135, 162, 244);
+  }
+
   .input__field {
     text-align: center;
   }
@@ -53,6 +58,8 @@ body {
     height: 50px;
     border: 1px solid grey;
     border-radius: 5px;
+    font-size: 24px;
+    padding-left: 5px;
   }
 
   .items {
