@@ -1,12 +1,21 @@
 const inputElement = document.getElementById("input");
 const btnElement = document.querySelector(".btn");
+const addBtnEelement = document.querySelector(".btn__add");
+const clearBtnElement = document.querySelector(".btn__clear");
 const itemsElement = document.querySelector(".items");
 
-btnElement.addEventListener("click", (e) => {
+function saveTask(name) {
+  localStorage.setItem(`${name}`, name);
+}
+
+addBtnEelement.addEventListener("click", (e) => {
   e.preventDefault();
+
   if (!inputElement.value) {
     alert("Input can not be empty");
   } else {
+    saveTask(inputElement.value);
+
     const renderTask = `
         <li>
           <span class="task__name">${inputElement.value}</span>
@@ -15,43 +24,47 @@ btnElement.addEventListener("click", (e) => {
             ><i class="fa-solid fa-trash-can"  id="btn__delete" onclick=removeTask(this) ></i>
           </span>
         </li >
+        
 `;
 
-    function appendTasks(name, data) {
-      let old = localStorage.getItem(name);
-      if (old === null) old = "";
-      localStorage.setItem(name, old + data);
-    }
-
     itemsElement.insertAdjacentHTML("afterbegin", renderTask);
-    localStorage.setItem("tasks", renderTask);
-    appendTasks("allTasks", renderTask);
   }
 });
 
-function loadTasks() {
-  const tasks = localStorage.getItem("allTasks");
+function renderAllTasks() {
+  const allKeys = Object.keys(localStorage);
+  console.log(allKeys);
+  if (allKeys.length === 0) return;
 
-  itemsElement.insertAdjacentHTML("afterbegin", tasks);
+  const renderTask = allKeys.map((e) => {
+    return `
+  <li>
+    <span class="task__name">${e}</span>
+    <span class="task__icons">
+      <i class="fa-solid fa-pen-to-square"></i
+      ><i class="fa-solid fa-trash-can"  id="btn__delete" onclick=removeTask(this)></i>
+    </span>
+  </li >
+`;
+  });
+
+  itemsElement.insertAdjacentHTML("afterbegin", renderTask);
 }
-loadTasks();
-
-// function findKey() {
-//   for (let i = 0; i < localStorage.length; i++) {
-//     console.log(localStorage.getItem(localStorage.key(i)));
-//   }
-// }
-
-// findKey();
-
-// const deleteBtn = document.getElementById("btn__delete");
-// console.log(deleteBtn);
 
 function removeTask(e) {
-  let key = localStorage.key(e);
-  let items = localStorage.getItem(key);
-  console.log(items);
   let parent = e.parentNode.parentNode;
-  console.log(parent);
-  //   parent.remove();
+  let keyName = parent.querySelector(".task__name").textContent;
+  console.log(keyName);
+  let items = window.localStorage.getItem(keyName);
+  console.log(items);
+  localStorage.removeItem(items);
+  parent.remove();
 }
+
+renderAllTasks();
+
+clearBtnElement.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.localStorage.clear();
+  window.location.reload();
+});

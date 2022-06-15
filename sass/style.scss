@@ -36,6 +36,10 @@ body {
     vertical-align: middle;
   }
 
+  // .hidden {
+  //   display: none;
+  // }
+
   .btn {
     padding: 12px;
     background-color: $blue-color;
@@ -43,11 +47,38 @@ body {
     font-size: 18px;
     border: none;
     border-radius: 10px;
+    border-style: none;
     cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 44px;
+    min-width: 10px;
+    outline: none;
+    overflow: hidden;
+    padding: 9px 20px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
   }
 
-  .btn:hover {
+  .btn__add:hover {
     background-color: rgb(135, 162, 244);
+  }
+
+  .btn__clear {
+    background-color: yellow;
+    color: black;
+  }
+
+  .btn__clear:hover {
+    background-color: rgb(236, 236, 177);
   }
 
   .input__field {

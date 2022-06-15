@@ -50,11 +50,40 @@ body {
   font-size: 18px;
   border: none;
   border-radius: 10px;
+  border-style: none;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
-.wrapper .btn:hover {
+.wrapper .btn__add:hover {
   background-color: #87a2f4;
+}
+
+.wrapper .btn__clear {
+  background-color: yellow;
+  color: black;
+}
+
+.wrapper .btn__clear:hover {
+  background-color: #ececb1;
 }
 
 .wrapper .input__field {
