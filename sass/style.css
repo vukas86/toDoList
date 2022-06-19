@@ -167,4 +167,47 @@ body {
 .wrapper .fa-trash-can:hover {
   background-color: #da5454;
 }
+
+@media (max-width: 800px) {
+  .wrapper {
+    padding: 10px;
+  }
+  .wrapper h1 {
+    font-size: 24px;
+  }
+  .wrapper img {
+    display: none;
+  }
+  .wrapper .input__field input {
+    width: 100%;
+    font-size: 18px;
+  }
+  .wrapper .btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .wrapper .btn {
+    width: 40%;
+    font-size: 12px;
+    margin: 5px;
+    line-height: 1;
+  }
+  .wrapper li {
+    width: 160px;
+    margin: auto 0;
+  }
+  .wrapper .task__icons {
+    margin-top: 10px;
+  }
+  .wrapper .task__icons i {
+    height: 70%;
+    width: 30px;
+    margin: 1px;
+    font-size: 10px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

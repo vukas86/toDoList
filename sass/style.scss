@@ -6,6 +6,12 @@
   color: white;
 }
 
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
 body {
   background-image: url("/img/2022.jpg");
   height: 100%;
@@ -146,5 +152,42 @@ body {
   }
   .fa-trash-can:hover {
     background-color: rgb(218, 84, 84);
+  }
+
+  @include mobile {
+    padding: 10px;
+    h1 {
+      font-size: 24px;
+    }
+    img {
+      display: none;
+    }
+    .input__field input {
+      width: 100%;
+      font-size: 18px;
+    }
+    .btns {
+      display: flex;
+      justify-content: center;
+    }
+    .btn {
+      width: 40%;
+      font-size: 12px;
+      margin: 5px;
+      line-height: 1;
+    }
+    li {
+      width: 160px;
+      margin: auto 0;
+    }
+    .task__icons {
+      margin-top: 10px;
+    }
+    .task__icons i {
+      height: 70%;
+      width: 30px;
+      margin: 1px;
+      font-size: 10px;
+    }
   }
 }
