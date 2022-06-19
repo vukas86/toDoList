@@ -146,14 +146,14 @@ body {
   text-align: center;
 }
 
-.wrapper .fa-pen-to-square {
+.wrapper .fa-check {
   padding: 8px;
   color: white;
   background-color: green;
   border: 1px solid green;
 }
 
-.wrapper .fa-pen-to-square:hover {
+.wrapper .fa-check:hover {
   background-color: #2fa02f;
 }
 

@@ -127,14 +127,14 @@ body {
     }
   }
 
-  .fa-pen-to-square {
+  .fa-check {
     @include iconsStyle();
 
     background-color: green;
     border: 1px solid green;
   }
 
-  .fa-pen-to-square:hover {
+  .fa-check:hover {
     background-color: rgb(47, 160, 47);
   }
 

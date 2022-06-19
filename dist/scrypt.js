@@ -1,11 +1,36 @@
 const inputElement = document.getElementById("input");
-const btnElement = document.querySelector(".btn");
 const addBtnEelement = document.querySelector(".btn__add");
 const clearBtnElement = document.querySelector(".btn__clear");
 const itemsElement = document.querySelector(".items");
+// const taskContentElement = document.querySelector(".task__name");
 
 function saveTask(name) {
   localStorage.setItem(`${name}`, name);
+}
+
+function strikeTask(e) {
+  let parent = e.parentNode.parentNode.querySelector(".task__name");
+
+  let parentName =
+    e.parentNode.parentNode.querySelector(".task__name").textContent;
+
+  localStorage.removeItem(parentName);
+
+  parent.style.setProperty("text-decoration", "line-through");
+
+  localStorage.setItem(`${parentName.strike()}`, `${parentName}`);
+}
+
+function inputTasks(id) {
+  return `
+  <li>
+    <span class="task__name">${id}</span>
+    <span class="task__icons">
+    <i class="fa-solid fa-check" onclick=strikeTask(this)></i>
+      <i class="fa-solid fa-trash-can"  id="btn__delete" onclick=removeTask(this) ></i>
+    </span>
+  </li >
+`;
 }
 
 addBtnEelement.addEventListener("click", (e) => {
@@ -16,16 +41,7 @@ addBtnEelement.addEventListener("click", (e) => {
   } else {
     saveTask(inputElement.value);
 
-    const renderTask = `
-        <li>
-          <span class="task__name">${inputElement.value}</span>
-          <span class="task__icons">
-            <i class="fa-solid fa-pen-to-square"></i
-            ><i class="fa-solid fa-trash-can"  id="btn__delete" onclick=removeTask(this) ></i>
-          </span>
-        </li >
-        
-`;
+    const renderTask = inputTasks(inputElement.value);
 
     itemsElement.insertAdjacentHTML("afterbegin", renderTask);
   }
@@ -37,15 +53,7 @@ function renderAllTasks() {
   if (allKeys.length === 0) return;
 
   const renderTask = allKeys.map((e) => {
-    return `
-  <li>
-    <span class="task__name">${e}</span>
-    <span class="task__icons">
-      <i class="fa-solid fa-pen-to-square"></i
-      ><i class="fa-solid fa-trash-can"  id="btn__delete" onclick=removeTask(this)></i>
-    </span>
-  </li >
-`;
+    return inputTasks(e);
   });
 
   itemsElement.insertAdjacentHTML("afterbegin", renderTask);
@@ -54,9 +62,7 @@ function renderAllTasks() {
 function removeTask(e) {
   let parent = e.parentNode.parentNode;
   let keyName = parent.querySelector(".task__name").textContent;
-  console.log(keyName);
   let items = window.localStorage.getItem(keyName);
-  console.log(items);
   localStorage.removeItem(items);
   parent.remove();
 }
