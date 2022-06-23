@@ -44,7 +44,13 @@ addBtnEelement.addEventListener("click", (e) => {
 
     itemsElement.insertAdjacentHTML("afterbegin", renderTask);
   }
+  inputElement.value = "";
 });
+
+// addBtnEelement.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   inputElement.value = "";
+// });
 
 function renderAllTasks() {
   const allKeys = Object.keys(localStorage);
